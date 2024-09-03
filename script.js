@@ -6,8 +6,10 @@ let isDragging= false;
 
 function updatePrice(positionRatio) {
   const pricingTypes = ["10k", "50k", "100k", "500k", "1M"];
+  const widths = ["0%", "25%", "50%", "75%", "100%"];
   const stepIndex = Math.round(positionRatio * 4);
   pricingType.textContent = `${pricingTypes[stepIndex]} PAGEVIEWS`;
+  slider.style.width = widths[stepIndex];
 }
 
 sliderBtn.addEventListener("mousedown", () => {

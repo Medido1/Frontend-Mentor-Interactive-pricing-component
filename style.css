@@ -46,8 +46,14 @@ p {
   font-size: 15px;
   color: var(--Grayish_Blue);
 }
-/* header styling */
+/*doument stlying */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .header {
+  width: 100%;
   padding: 4rem 2rem 2rem;
   text-align: center;
   background: url(./images/pattern-circles.svg) no-repeat, url(./images/bg-pattern.svg);
@@ -69,13 +75,10 @@ h1 {
 }
 
 .pricing_container {
+  margin-top: -6rem;
   background-color: white;
   border-radius: .75rem;
   padding: 1.25rem 1rem;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%);
   width: 90vw;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   max-width: 600px;
@@ -207,6 +210,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
 .attribution { 
   font-size: .75em; 
   text-align: center;

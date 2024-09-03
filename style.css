@@ -34,6 +34,8 @@ body {
   font-family: var(--Manrope);
   background-color: var(--Very_Pale_Blue);
   padding-bottom: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 button {
   border: 0;
@@ -199,6 +201,19 @@ h1 {
 .btn.trial:hover {
   opacity: .8;
   font-weight: 500;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.attribution { 
+  font-size: .75em; 
+  text-align: center;
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
 }
 
 @media (min-width: 768px) {

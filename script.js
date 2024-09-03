@@ -15,14 +15,11 @@ function updatePrice(positionRatio) {
   price.textContent = `${prices[stepIndex]}.00`;
 }
 
-sliderBtn.addEventListener("mousedown", () => {
-  isDragging = true;
-})
-
-document.addEventListener("mousemove", (e) => {
+function slideBtn(e) {
   if (isDragging) {
+    const clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
     const sliderContainerRect = sliderContainer.getBoundingClientRect();
-    let newLeft = e.clientX - sliderContainerRect.left;
+    let newLeft = clientX - sliderContainerRect.left;
 
     // Keep the button within the slider bounds
     if (newLeft < 0) {
@@ -36,11 +33,27 @@ document.addEventListener("mousemove", (e) => {
     newLeft = Math.round(newLeft / step) * step;
     sliderBtn.style.left = `${newLeft}px`;
 
-    updatePrice(newLeft / (sliderContainerRect.width - sliderBtn.offsetWidth))
+    updatePrice(newLeft / sliderContainerRect.width)
   }
+}
+
+sliderBtn.addEventListener("mousedown", () => {
+  isDragging = true;
 })
+sliderBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  isDragging = true;
+})
+
+document.addEventListener("mousemove", slideBtn);
+document.addEventListener("touchmove", slideBtn)
   
 document.addEventListener("mouseup", () => {
+  if (isDragging) {
+    isDragging = false;
+  }
+})
+document.addEventListener("touchend", () => {
   if (isDragging) {
     isDragging = false;
   }

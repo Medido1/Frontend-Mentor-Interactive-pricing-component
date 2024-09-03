@@ -75,7 +75,7 @@ h1 {
   transform: translate(-50%);
   width: 90vw;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  max-width: 500px;
+  max-width: 600px;
   font-weight: 500;
 
   display: flex;
@@ -181,3 +181,8 @@ h1 {
   font-size: 1.125rem;
 }
 
+@media (min-width: 768px) {
+  .pricing_container {
+    top: 25%;
+  }
+}

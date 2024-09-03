@@ -32,6 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
   height: 100vh;
   font-family: var(--Manrope);
+  background-color: var(--Very_Pale_Blue);
 }
 button {
   border: 0;
@@ -62,4 +63,92 @@ h1 {
   left: 50%;
   transform: translate(-50%);
   z-index: 0;
+}
+
+.pricing_container {
+  background-color: white;
+  border-radius: .75rem;
+  padding: 1rem;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90vw;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  max-width: 500px;
+  font-weight: 500;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: var(--Pale_Blue);
+}
+
+.slider_container {
+  position: relative;
+  width: 90%;
+  border-radius: .5rem;
+  height: .65rem;
+  background-color: var(--Light_Grayish_Blue);
+}
+
+.icon.slider {
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 50%;
+  background-color: var(--Strong_Cyan);
+  padding: 1rem .75rem;
+  box-shadow: 0px 8px 24px var(--Strong_Cyan);
+}
+
+.price_container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  color: var(--Dark_Desaturated_Blue);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.billing_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.discount {
+  background-color: var(--Light_Grayish_Red);
+  color: var(--Light_Red);
+  border-radius: 100vmax;
+  padding: 0 .5rem;
+}
+
+.border {
+  width: 110%;
+  height: .1rem;
+  background-color: var(--Light_Grayish_Blue);
+  padding: 0;
+}
+
+.benefits {
+  list-style: none;
+}
+
+.benefits li {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn.trial {
+  padding: .75rem 2rem;
+  background-color: var(--Dark_Desaturated_Blue);
+  color: var(--Light_Grayish_Blue);
+  border-radius: 100vmax;
+  font-size: 1.125rem;
 }

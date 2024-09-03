@@ -3,7 +3,12 @@ const sliderBtn = document.querySelector(".slider_btn");
 const slider = document.querySelector(".slider");
 const pricingType = document.querySelector(".pricing_type");
 const price = document.querySelector(".price");
+const toggleBtn = document.querySelector(".btn_toggle");
 let isDragging= false;
+
+function toggleBilling() {
+  toggleBtn.classList.toggle("right");
+}
 
 function updatePrice(positionRatio) {
   const pricingTypes = ["10k", "50k", "100k", "500k", "1M"];
@@ -58,3 +63,4 @@ document.addEventListener("touchend", () => {
     isDragging = false;
   }
 })
+toggleBtn.addEventListener("click", toggleBilling);

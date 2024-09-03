@@ -129,7 +129,25 @@ h1 {
 
 .billing_container {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: .25rem;
+}
+
+.btn_toggle {
+  border-radius: 100vmax;
+  padding: .25rem  1.75rem .25rem .25rem;
+  background-color: var(--Light_Grayish_Blue);
+}
+
+.btn_toggle.right {
+  padding: .25rem .25rem .25rem 1.75rem;
+}
+
+.circle {
+  border-radius: 50%;
+  background-color: white;
+  width: 20px;
+  height: 20px;
 }
 
 .discount {
@@ -143,7 +161,6 @@ h1 {
   width: 110%;
   height: .1rem;
   background-color: var(--Light_Grayish_Blue);
-  padding: 0;
 }
 
 .benefits {
@@ -163,3 +180,4 @@ h1 {
   border-radius: 100vmax;
   font-size: 1.125rem;
 }
+

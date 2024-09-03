@@ -85,6 +85,10 @@ h1 {
   color: var(--Pale_Blue);
 }
 
+.pricing_type {
+  font-size: 1.25rem;
+}
+
 .slider_container {
   position: relative;
   width: 90%;
@@ -93,7 +97,14 @@ h1 {
   background-color: var(--Light_Grayish_Blue);
 }
 
-.icon.slider {
+.slider {
+  width: 50%;
+  height: .65rem;
+  background-color: var(--Strong_Cyan);
+  border-radius: .5rem;
+}
+
+.slider_btn {
   position: absolute;
   top: -150%;
   left: 50%;

@@ -4,20 +4,30 @@ const slider = document.querySelector(".slider");
 const pricingType = document.querySelector(".pricing_type");
 const price = document.querySelector(".price");
 const toggleBtn = document.querySelector(".btn_toggle");
+
+const pricingTypes = ["10k", "50k", "100k", "500k", "1M"];
+const widths = ["0%", "25%", "50%", "75%", "100%"];
+const monthlyPrices = ["$8", "$12", "$16", "$24", "$36"];
+let yearlyPrices = ["$6", "$9", "$12", "$18", "$25"];
+let billing = "monthly";
 let isDragging= false;
+let positionRatio = 0;
 
 function toggleBilling() {
   toggleBtn.classList.toggle("right");
+  billing = (billing === "monthly") ? "yearly" : "monthly";
+  updatePrice(positionRatio);
 }
 
 function updatePrice(positionRatio) {
-  const pricingTypes = ["10k", "50k", "100k", "500k", "1M"];
-  const widths = ["0%", "25%", "50%", "75%", "100%"];
-  const prices = ["$8", "$12", "$16", "$24", "$36"];
   const stepIndex = Math.round(positionRatio * 4);
   pricingType.textContent = `${pricingTypes[stepIndex]} PAGEVIEWS`;
   slider.style.width = widths[stepIndex];
-  price.textContent = `${prices[stepIndex]}.00`;
+  if (billing === "monthly") {
+    price.textContent = `${monthlyPrices[stepIndex]}.00`;
+  } else if (billing === "yearly") {
+    price.textContent = `${yearlyPrices[stepIndex]}.00`;
+  }
 }
 
 function slideBtn(e) {
@@ -38,7 +48,8 @@ function slideBtn(e) {
     newLeft = Math.round(newLeft / step) * step;
     sliderBtn.style.left = `${newLeft}px`;
 
-    updatePrice(newLeft / sliderContainerRect.width)
+    positionRatio = newLeft / sliderContainerRect.width;
+    updatePrice(positionRatio)
   }
 }
 
